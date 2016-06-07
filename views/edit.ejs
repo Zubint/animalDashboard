@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+  //   if(errorsArray !=null){console.log('boo!')}
+  //   <ul id="errors">
+  //   for (idx=0; idx<errorsArray.length; idx++){
+  //     <li class="error"> errorsArray[idx] </li>
+  //    }  -->
+  // <!-- </ul> -->
+    </script>
+    <title>animal Dash App - Edit an animal</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+            <div>
+                <h1> Editing an Animal <%= animalToEdit._id %></h1>
+            </div>
+            <div>
+              <form action="/animal/<%= animalToEdit[0]._id %>" method="post">
+                 <!--restful call for editing an animal = app.post("/animal/:id")  -->
+                 <p>Name: <input type="text" name="name" id="name" value="<%= animalToEdit[0].name %>"></p>
+                 <p>Type: <input type="text" name="type" id="type" value="<%= animalToEdit[0].type %>"></p>
+                 <p>Description: <input type="text" name="description" id="description" value="<%= animalToEdit[0].description %>"></p>
+                 <button type="submit">Update <%=animalToEdit[0].name %>!</button>
+              </form>
+              <a href="/">Back</a>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

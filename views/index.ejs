@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the animalDash App!</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+          <h1> Welcome to the animals Dashboard!</h1>
+          <div>
+            <p><Button><a href="/animal/new">Add animal</a></button>
+          </div>
+          <div>
+            <ul>Your Animals:
+               <% for(var idx=0; idx<allAnimals.length; idx++){ %>
+                  <li>
+                    <a href="/animal/edit/<%= allAnimals[idx]._id%>"> <%= " " + allAnimals[idx].name%> </a>
+                     <form action="/animal/delete/<%=allAnimals[idx]._id %>" method="post">
+                      <p><button class="delete" type="submit">Delete this animal<img src="/img/delete.png"></button></p>
+                    </form>
+                </li>
+                          <%}  %>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
